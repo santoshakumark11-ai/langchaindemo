@@ -14,7 +14,7 @@ from langchain_core.prompts import PromptTemplate
 
 st.title("Travel Guide Information")
 
-with st.slidbar:
+with st.sidebar:
     st.title("Provide your API Key")
     OPENAI_API_KEY=st.text_input("Enter your API Key:", type="password")
 if not OPENAI_API_KEY:
