@@ -4,15 +4,25 @@ from langchain_community.chat_models import ChatOllama
 from langchain_openai import ChatOpenAI
 
 from langchain_core.prompts import PromptTemplate
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 
 
-load_dotenv()
+#load_dotenv()
 
 
-OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
+
 
 st.title("Travel Guide Information")
+
+with st.slidbar:
+    st.title("Provide your API Key")
+    OPENAI_API_KEY=st.text_input("Enter your API Key:", type="password")
+if not OPENAI_API_KEY:
+    st.warning("Please enter your API Key to continue.")
+    st.stop()
+
+
+
 #llm=ChatOllama(model="gemma:2B")
 llm=ChatOpenAI(model="gpt-5-mini", openai_api_key=OPENAI_API_KEY)
 prompt_template = PromptTemplate(input_variables=["city", "month", "language", "budget"], 
