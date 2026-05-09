@@ -3,4 +3,4 @@ langchain-community
 langchain-openai
 openai
 python-dotenv
-streamlit=26.1.1
+streamlit
