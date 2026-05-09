@@ -1,0 +1,3 @@
+openai
+python-dotenv
+streamlit=26.1.1
